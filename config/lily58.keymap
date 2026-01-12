@@ -79,3 +79,12 @@
         extra_3 { status = "reserved"; };
     };
 };
+
+/* --- nice!view uses SPI0, so ensure I2C0/TWI0 is OFF --- */
+&i2c0 { status = "disabled"; };
+&twim0 { status = "disabled"; };
+&twi0  { status = "disabled"; };
+
+/* Optional: force SPI0 on (usually already on via nice_view_adapter) */
+&spi0 { status = "okay"; };
+&spim0 { status = "okay"; };
